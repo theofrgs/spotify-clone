@@ -1,9 +1,14 @@
-import { View, Text } from "react-native";
+import { SafeAreaView, Text } from "react-native";
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n";
+import Home from "./src/pages/home";
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-red-600 font-bold text-xl">Hello NativeWind!</Text>
-    </View>
+    <I18nextProvider i18n={i18n}>
+      <SafeAreaView className="flex-1 items-center justify-center bg-black">
+        <Home />
+      </SafeAreaView>
+    </I18nextProvider>
   );
 }

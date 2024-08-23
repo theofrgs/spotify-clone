@@ -9,10 +9,16 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@formatjs/intl-getcanonicallocales": "^2.3.0",
+    "@formatjs/intl-pluralrules": "^5.2.14",
+    "@types/i18next": "^13.0.0",
+    "@types/react-i18next": "^8.1.0",
     "expo": "~51.0.28",
     "expo-status-bar": "~1.12.1",
+    "i18next": "^23.14.0",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
+    "react-i18next": "^15.0.1",
     "react-native": "0.74.5"
   },
   "devDependencies": {
