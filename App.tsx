@@ -1,22 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import "@/global.css";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { I18nextProvider } from "react-i18next";
+import { SafeAreaView } from "react-native";
+import i18n from "./i18n";
+import Home from "./src/pages/home/home";
+
 
 export default function App() {
   return (
-    <GluestackUIProvider mode="light"><View style={styles.container}>
-          <Text>Open up App.tsx to start working on your app!</Text>
-          <StatusBar style="auto" />
-        </View></GluestackUIProvider>
+    <GluestackUIProvider mode="light">
+      <I18nextProvider i18n={i18n}>
+        <SafeAreaView className="flex-1 bg-black">
+          <Home />
+        </SafeAreaView>
+      </I18nextProvider>
+    </GluestackUIProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
