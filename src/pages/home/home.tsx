@@ -65,7 +65,7 @@ const Home = () => {
   };
 
   return (
-    <SafeAreaView className="p-6 gap-4 mt-16">
+    <SafeAreaView className="flex p-6 gap-4 mt-16">
       <HomeHeader
         homeState={homeState}
         setHomeState={setHomeState}

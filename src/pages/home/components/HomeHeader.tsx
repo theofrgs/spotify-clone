@@ -9,7 +9,11 @@ type Props = {
   getTranslatedHomeState: (state: HOME_STATE) => string;
 };
 
-const HomeHeader = ({ homeState, setHomeState, getTranslatedHomeState }: Props) => {
+const HomeHeader = ({
+  homeState,
+  setHomeState,
+  getTranslatedHomeState,
+}: Props) => {
   return (
     <View className="flex-row gap-2">
       <Button
@@ -35,7 +39,7 @@ const HomeHeader = ({ homeState, setHomeState, getTranslatedHomeState }: Props) 
             size="sm"
             variant="solid"
             action="primary"
-            className={`rounded-full ${homeState === state ? "bg-green-400" : "bg-slate-700"}`}
+            className={`rounded-full ${homeState === state ? "bg-green-400" : "bg-zinc-800/75"}`}
             onPress={() => setHomeState(state as HOME_STATE)}
           >
             <ButtonText>
