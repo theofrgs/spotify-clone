@@ -2,12 +2,7 @@ import { SafeAreaView, Text } from "react-native";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Header from "./components/header";
-
-export enum HOME_STATE {
-  ALL,
-  MUSIC,
-  PODCAST,
-}
+import { HOME_STATE } from "./enum";
 
 const Home = () => {
   const { t } = useTranslation();

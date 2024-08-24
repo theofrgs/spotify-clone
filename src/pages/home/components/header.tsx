@@ -1,7 +1,7 @@
-import { View, Image } from "react-native";
+import { View, Image, Linking } from "react-native";
 import React from "react";
-import { HOME_STATE } from "../home";
 import { Button, ButtonText } from "@/components/ui/button";
+import { HOME_STATE } from "../enum";
 
 type Props = {
   homeState: HOME_STATE;
@@ -16,12 +16,15 @@ const Header = ({ homeState, setHomeState, getTranslatedHomeState }: Props) => {
         size="sm"
         variant="solid"
         action="primary"
-        className="rounded-full"
-        onPress={() => console.log("navigate to linkedin")}
+        className="rounded-full p-0 w-9"
+        onPress={() =>
+          Linking.openURL("https://www.linkedin.com/in/theo-fargeas-127046197/")
+        }
       >
         <Image
-          source={require("@/assets/favicon.png")}
-          className="w-6 h-6 object-contain"
+          source={require("@/assets/profil_picture.jpg")}
+          className="rounded-full w-full h-full"
+          resizeMode="cover"
         />
       </Button>
       {Object.values(HOME_STATE)
