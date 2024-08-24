@@ -1,8 +1,51 @@
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import Header from "./components/header";
 import { HOME_STATE } from "./enum";
+import LastAlbums from "./components/LastAlbums";
+import LastReleased from "./components/LastReleased";
+import HomeHeader from "./components/HomeHeader";
+
+const albums = [
+  {
+    title: "Radio Sunset Lover",
+    cover: require("@/assets/profil_picture.jpg"),
+  },
+  {
+    title: "Electro rooftop",
+    cover: require("@/assets/profil_picture.jpg"),
+  },
+  {
+    title: "Liked songs",
+    cover: require("@/assets/profil_picture.jpg"),
+  },
+  {
+    title: "Radio California dream",
+    cover: require("@/assets/profil_picture.jpg"),
+  },
+  {
+    title: "Radio Paper Plane",
+    cover: require("@/assets/profil_picture.jpg"),
+  },
+  {
+    title: "SummerVibes",
+    cover: require("@/assets/profil_picture.jpg"),
+  },
+  {
+    title: "Night Vibes",
+    cover: require("@/assets/profil_picture.jpg"),
+  },
+  {
+    title: "This is Shiloh dinasty",
+    cover: require("@/assets/profil_picture.jpg"),
+  },
+];
+
+const lastReleased = {
+  artist: 'Central Cee',
+  title: "Bolide Noir",
+  cover: require("@/assets/profil_picture.jpg"),
+};
 
 const Home = () => {
   const { t } = useTranslation();
@@ -22,15 +65,14 @@ const Home = () => {
   };
 
   return (
-    <SafeAreaView className="p-4">
-      {/* <Text className="text-white font-bold text-xl">
-        {t("home.welcome")} {"{{username}}"}
-      </Text> */}
-      <Header
+    <SafeAreaView className="p-6 gap-4 mt-16">
+      <HomeHeader
         homeState={homeState}
         setHomeState={setHomeState}
         getTranslatedHomeState={getTranslatedHomeState}
       />
+      <LastAlbums albums={albums} />
+      <LastReleased lastReleased={lastReleased}/>
     </SafeAreaView>
   );
 };

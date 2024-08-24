@@ -9,9 +9,9 @@ type Props = {
   getTranslatedHomeState: (state: HOME_STATE) => string;
 };
 
-const Header = ({ homeState, setHomeState, getTranslatedHomeState }: Props) => {
+const HomeHeader = ({ homeState, setHomeState, getTranslatedHomeState }: Props) => {
   return (
-    <View className="p-2 flex-row gap-2">
+    <View className="flex-row gap-2">
       <Button
         size="sm"
         variant="solid"
@@ -38,7 +38,7 @@ const Header = ({ homeState, setHomeState, getTranslatedHomeState }: Props) => {
             className={`rounded-full ${homeState === state ? "bg-green-400" : "bg-slate-700"}`}
             onPress={() => setHomeState(state as HOME_STATE)}
           >
-            <ButtonText className="font-bold text-xl">
+            <ButtonText>
               {getTranslatedHomeState(state as HOME_STATE)}
             </ButtonText>
           </Button>
@@ -47,4 +47,4 @@ const Header = ({ homeState, setHomeState, getTranslatedHomeState }: Props) => {
   );
 };
 
-export default Header;
+export default HomeHeader;
