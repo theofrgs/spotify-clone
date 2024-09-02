@@ -13,7 +13,7 @@ type Props = {
 const LastReleased = ({ lastReleased }: Props) => {
   const { t } = useTranslation();
   return (
-    <View className={`flex flex-wrap flex-row p-1`}>
+    <View className={`flex flex-wrap flex-col p-1`}>
       <Text
         numberOfLines={2}
         className={`text-xl font-bold text-white px-1`}

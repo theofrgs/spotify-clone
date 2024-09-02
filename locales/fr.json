@@ -1,5 +1,10 @@
 {
   "home": {
     "welcome": "Bonjour"
-  }
+  },
+  "all": "Tous",
+  "music": "Musique",
+  "podcast": "Podcast",
+  "foryou": "Sélectionné pour vous",
+  "recentListen": "Écoute récemment"
 }

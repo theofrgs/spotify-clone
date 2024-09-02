@@ -1,51 +1,80 @@
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HOME_STATE } from "./enum";
 import LastAlbums from "./components/LastAlbums";
 import LastReleased from "./components/LastReleased";
 import HomeHeader from "./components/HomeHeader";
+import RecentListen from "./components/RecentListen";
 
 const albums = [
   {
-    title: "Radio Sunset Lover",
-    cover: require("@/assets/profil_picture.jpg"),
+    title: "Ocean Drive",
+    cover: require("@/assets/album_ocean_drive.jpeg"),
   },
   {
-    title: "Electro rooftop",
-    cover: require("@/assets/profil_picture.jpg"),
+    title: "Chill Beats",
+    cover: require("@/assets/album_chill_beats.jpeg"),
   },
   {
-    title: "Liked songs",
-    cover: require("@/assets/profil_picture.jpg"),
+    title: "Acoustic Evening",
+    cover: require("@/assets/album_acoustic_evening.jpeg"),
   },
   {
-    title: "Radio California dream",
-    cover: require("@/assets/profil_picture.jpg"),
+    title: "Morning Motivation",
+    cover: require("@/assets/album_morning_motivation.jpeg"),
   },
   {
-    title: "Radio Paper Plane",
-    cover: require("@/assets/profil_picture.jpg"),
+    title: "Rock Classics",
+    cover: require("@/assets/album_rock_classics.jpeg"),
   },
   {
-    title: "SummerVibes",
-    cover: require("@/assets/profil_picture.jpg"),
+    title: "Jazz Vibes",
+    cover: require("@/assets/album_jazz_vibes.jpeg"),
   },
   {
-    title: "Night Vibes",
-    cover: require("@/assets/profil_picture.jpg"),
+    title: "Pop Essentials",
+    cover: require("@/assets/album_pop_essentials.jpeg"),
   },
   {
-    title: "This is Shiloh dinasty",
-    cover: require("@/assets/profil_picture.jpg"),
+    title: "Late Night Lounge",
+    cover: require("@/assets/album_late_night_lounge.jpg"),
   },
 ];
 
 const lastReleased = {
-  artist: 'Central Cee',
-  title: "Bolide Noir",
-  cover: require("@/assets/profil_picture.jpg"),
+  artist: "The Weeknd",
+  title: "After Hours",
+  cover: require("@/assets/album_after_hours.jpeg"),
 };
+
+const lastListens = [
+  {
+    artist: "Drake",
+    title: "Certified Lover Boy",
+    cover: require("@/assets/album_certified_lover_boy.jpeg"),
+  },
+  {
+    artist: "Adele",
+    title: "30",
+    cover: require("@/assets/album_30.jpeg"),
+  },
+  {
+    artist: "Billie Eilish",
+    title: "Happier Than Ever",
+    cover: require("@/assets/album_happier_than_ever.jpeg"),
+  },
+  {
+    artist: "Ed Sheeran",
+    title: "= (Equals)",
+    cover: require("@/assets/album_equals.jpeg"),
+  },
+  {
+    artist: "Taylor Swift",
+    title: "Folklore",
+    cover: require("@/assets/album_folklore.jpeg"),
+  },
+];
 
 const Home = () => {
   const { t } = useTranslation();
@@ -65,15 +94,20 @@ const Home = () => {
   };
 
   return (
-    <SafeAreaView className="flex p-6 gap-4 mt-16">
-      <HomeHeader
-        homeState={homeState}
-        setHomeState={setHomeState}
-        getTranslatedHomeState={getTranslatedHomeState}
-      />
-      <LastAlbums albums={albums} />
-      <LastReleased lastReleased={lastReleased}/>
-    </SafeAreaView>
+    <ScrollView>
+      <View className="flex mt-16 gap-4">
+        <View className="flex gap-4 p-6 pb-0">
+          <HomeHeader
+            homeState={homeState}
+            setHomeState={setHomeState}
+            getTranslatedHomeState={getTranslatedHomeState}
+          />
+          <LastAlbums albums={albums} />
+          <LastReleased lastReleased={lastReleased} />
+        </View>
+        <RecentListen lastListens={lastListens} />
+      </View>
+    </ScrollView>
   );
 };
 
