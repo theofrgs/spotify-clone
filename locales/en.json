@@ -2,6 +2,11 @@
   "home": {
     "welcome": "Good afternoon"
   },
+  "menu": {
+    "home": "Home",
+    "search": "Search",
+    "library": "Library"
+  },
   "all": "All",
   "music": "Music",
   "podcast": "Podcast",

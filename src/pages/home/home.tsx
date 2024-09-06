@@ -95,7 +95,7 @@ const Home = () => {
 
   return (
     <ScrollView>
-      <View className="flex mt-16 gap-4">
+      <View className="flex gap-4">
         <View className="flex gap-4 p-6 pb-0">
           <HomeHeader
             homeState={homeState}

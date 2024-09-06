@@ -64,8 +64,8 @@ const RecentListen = ({ lastListens }: Props) => {
         <View className="gap-4 flex-row pl-6">
           {lastListens.map((song, key) =>
             key === 0 ? (
-              <View className="-pl-4">
-                <RecentListenCard key={key} song={song} />
+              <View className="-pl-4" key={key} >
+                <RecentListenCard song={song} />
               </View>
             ) : (
               <RecentListenCard  key={key} song={song} />
